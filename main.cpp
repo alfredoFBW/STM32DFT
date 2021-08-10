@@ -11,6 +11,14 @@
   * With this delay then Fs = 1/(13 + 8 us) = 47619 Hz \approx 48kHz
   */
 
+/* 
+ * The library (TextLCD) has some errors due to the fact that some 
+ * functions has been removed from MBED 6. What I did was to replace
+ * all "wait_ms()" with "ThisThread::sleep_for()". There could be more
+ * errors related to the casting, to solve them just make the conversion 
+ * from one type to another explicit.
+ */
+
 
 #include "AnalogIn.h"
 #include "InterruptIn.h"
